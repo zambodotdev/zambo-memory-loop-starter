@@ -1,3 +1,4 @@
 # The caller handle is a private continuity identity. Never commit it.
 .zambo-state.json
+.zambo-state-*.json
 __pycache__/

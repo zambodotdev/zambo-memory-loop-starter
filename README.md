@@ -59,6 +59,87 @@ your agent's continuity identity: it keeps one daily free-call counter
 and one memory store per agent. Keep it private; it is gitignored by
 default and is not a payment credential.
 
+## Pick your use case
+
+The loop is one shape; only the work step changes. Each recipe below
+is pre-built for an everyday job: a runnable file with the loop
+already wired, its standing instruction ready to paste, and its
+free-tier cost counted. Copy one file, run it, change nothing
+structural. Every recipe was run live before it was listed here;
+the receipts are on the use-case page:
+https://rambozambodotdev.gitlab.io/aer1-hub/the-loop-by-use-case.html
+
+### Watch monitor: [examples/watch-monitor.py](examples/watch-monitor.py)
+
+A scheduled agent checks BTC and ETH once a day and remembers the
+baseline, so an alert means a real move against remembered numbers.
+One run: 5 of the 20 free calls, plus the free wrap-up.
+
+Standing instruction:
+
+```
+1. Connect to https://zambo.dev/mcp and present your saved caller handle.
+2. Pick up the job with continuity_get_recent, then memory_recall for the watch rule and the last baseline.
+3. Check the watched assets with live_price.
+4. Compare against the baseline and flag any move of 3 percent or more.
+5. memory_remember the new baseline and whether an alert fired, then wrap with handover.
+```
+
+### Lead watch: [examples/lead-watch.py](examples/lead-watch.py)
+
+A daily scan for public demand signals in one trade and one city,
+with the criteria remembered so a quiet day and a busy day are both
+on the record. One run: 4 of the 20 free calls, plus the free
+wrap-up, and one of leadsignal's own 3 free daily scans.
+
+Standing instruction:
+
+```
+1. Connect to https://zambo.dev/mcp and present your saved caller handle.
+2. Pick up the job with continuity_get_recent, then memory_recall for the watch criteria.
+3. Run leadsignal for the watched trade and city.
+4. memory_remember the criteria and what the scan found, including an empty result, then wrap with handover.
+```
+
+### Research digest: [examples/research-digest.py](examples/research-digest.py)
+
+A one-line daily brief on the assets you follow: prices checked,
+the takeaway remembered, and tomorrow's digest written against
+yesterday's line instead of repeating it. One run with two assets:
+5 of the 20 free calls, plus the free wrap-up.
+
+Standing instruction:
+
+```
+1. Connect to https://zambo.dev/mcp and present your saved caller handle.
+2. Pick up the job with continuity_get_recent, then memory_recall for the last takeaway.
+3. Check each watched asset with live_price.
+4. Write the one-line takeaway and memory_remember it with the prices, then wrap with handover.
+```
+
+### Client delivery log: [examples/client-delivery-log.py](examples/client-delivery-log.py)
+
+Every delivery gets a written note, a remembered job reference, and
+a wrapped handover the client can open, so delivery is a link, not
+an argument. Defaults are a fictional sample, marked as a sample.
+One run: 4 of the 20 free calls, plus the free wrap-up.
+
+Standing instruction:
+
+```
+1. Connect to https://zambo.dev/mcp?full=true and present your saved caller handle.
+2. Pick up the job with continuity_get_recent, then memory_recall for past deliveries on it.
+3. Write the delivery note with the write tool.
+4. memory_remember the client, the job reference, and what was delivered, then wrap with handover and send the client the link.
+```
+
+### Cross-AI daily driver: [examples/cross-ai-daily-driver.md](examples/cross-ai-daily-driver.md)
+
+No code: the loop split across two AIs for people who switch models
+daily. Wrap in the first AI, pick up free in the second, keep
+working. The file carries the standing instruction for both sides
+and the per-side accounting.
+
 ## Using an MCP client instead
 
 This repo ships a `.mcp.json` with the Zambo server already entered:
