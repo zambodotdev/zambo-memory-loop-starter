@@ -140,6 +140,44 @@ daily. Wrap in the first AI, pick up free in the second, keep
 working. The file carries the standing instruction for both sides
 and the per-side accounting.
 
+## Run a small swarm: [examples/swarm-scan/](examples/swarm-scan/)
+
+One job, several agents, every contribution proven. A coordinator
+opens one shared job; each worker runs under its own caller handle,
+does one piece, remembers the finding with its receipt, and wraps the
+contribution into a handover. The coordinator picks each handover up
+for free, reads the worker's actual steps and receipts from the
+record instead of trusting summaries, and wraps the swarm into one
+handover that names every worker and its receipts. Zambo is the work
+layer under the swarm, not the orchestrator: your scripts run the
+agents, Zambo is where their work lands and gets proven.
+
+```bash
+# 1. The coordinator opens the shared job
+python3 examples/swarm-scan/coordinator.py open
+
+# 2. Each worker contributes, in its own terminal, under its own identity
+ZAMBO_AGENT_ID=worker-btc ZAMBO_SYMBOL=BTC python3 examples/swarm-scan/worker.py
+ZAMBO_AGENT_ID=worker-eth ZAMBO_SYMBOL=ETH python3 examples/swarm-scan/worker.py
+ZAMBO_AGENT_ID=worker-sol ZAMBO_SYMBOL=SOL python3 examples/swarm-scan/worker.py
+
+# 3. The coordinator picks every contribution up, verifies, and wraps
+python3 examples/swarm-scan/coordinator.py wrap
+```
+
+Each agent keeps its own state file (`.zambo-state-<agent>.json`,
+never committed): one handle per agent is what keeps each agent's
+memory and free allowance its own. The cost of the whole pattern is
+2 counted calls per agent (the work and the memory save); pickups and
+wrap-ups are free, so this swarm runs inside the free tier. When one
+agent outgrows it, the scaling line is per agent: a Day Pass is $0.99
+for that agent, unlimited for 24 hours, and the Zambo Pass is $29 for
+that agent for 30 days, both one-time payments. The same pattern as
+an installable skill file: [skills/swarm-coordination/SKILL.md](skills/swarm-coordination/SKILL.md).
+The full guide, with a real four-agent run and every receipt:
+https://rambozambodotdev.gitlab.io/aer1-hub/swarm-coordination-on-zambo.html
+Start free: https://zambo.dev/add/
+
 ## Using an MCP client instead
 
 This repo ships a `.mcp.json` with the Zambo server already entered:
