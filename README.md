@@ -98,6 +98,15 @@ https://zambo.dev/add/
 - The scheduled-agent version of this loop, with a real worked run and
   its receipts: the heartbeat recipe at
   https://rambozambodotdev.gitlab.io/aer1-hub/scheduled-agent-heartbeat.html
+- The morning shape of the same loop, a standup that reads what your
+  agents did overnight, with receipts:
+  https://rambozambodotdev.gitlab.io/aer1-hub/morning-standup-continuity.html
+- The switching shape: start in one AI, pick the work up in another,
+  free:
+  https://rambozambodotdev.gitlab.io/aer1-hub/pick-up-your-work-in-another-ai.html
+- The data behind the loop, counted from the public receipt stream:
+  4,247 callers came, 17 stayed:
+  https://dev.to/rambozambo/4247-callers-came-17-stayed-here-is-the-loop-the-17-run-2o51
 - Add Zambo to any AI in two minutes: https://zambo.dev/add/
 
 ## License
