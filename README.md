@@ -200,10 +200,10 @@ https://zambo.dev/add/
 
 ## The facts
 
-- MCP endpoint: https://zambo.dev/mcp (153 tools, 36 on the default
+- MCP endpoint: https://zambo.dev/mcp (153 tools, 37 on the default
   surface, no key required).
-- Free tier: 20 calls + 1 wrap-up free every day. Picking up in another
-  AI is always free.
+- Free tier: every tool free once a day, plus 3 continue calls; one
+  free wrap-up handover per day, and pickup is always free.
 - Day Pass: $0.99 for unlimited calls for 24 hours. Zambo Pass: $29 for
   30 days, one payment.
 - Every call returns an AER-1 receipt (IETF Internet-Draft
