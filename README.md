@@ -73,7 +73,7 @@ https://rambozambodotdev.gitlab.io/aer1-hub/the-loop-by-use-case.html
 
 A scheduled agent checks BTC and ETH once a day and remembers the
 baseline, so an alert means a real move against remembered numbers.
-One run: 5 of the 20 free calls, plus the free wrap-up.
+One run: 5 calls, all covered by the free tier on a fresh network, on its first run of the day, plus the free wrap-up.
 
 Standing instruction:
 
@@ -89,8 +89,7 @@ Standing instruction:
 
 A daily scan for public demand signals in one trade and one city,
 with the criteria remembered so a quiet day and a busy day are both
-on the record. One run: 4 of the 20 free calls, plus the free
-wrap-up, and one of leadsignal's own 3 free daily scans.
+on the record. One run: 4 calls, all covered by the free tier on a fresh network, on its first run of the day, plus the free wrap-up, and one of leadsignal's own 3 free daily scans.
 
 Standing instruction:
 
@@ -106,7 +105,7 @@ Standing instruction:
 A one-line daily brief on the assets you follow: prices checked,
 the takeaway remembered, and tomorrow's digest written against
 yesterday's line instead of repeating it. One run with two assets:
-5 of the 20 free calls, plus the free wrap-up.
+5 calls, all covered by the free tier on a fresh network, on its first run of the day, plus the free wrap-up.
 
 Standing instruction:
 
@@ -122,7 +121,7 @@ Standing instruction:
 Every delivery gets a written note, a remembered job reference, and
 a wrapped handover the client can open, so delivery is a link, not
 an argument. Defaults are a fictional sample, marked as a sample.
-One run: 4 of the 20 free calls, plus the free wrap-up.
+One run: 4 calls, all covered by the free tier on a fresh network, on its first run of the day, plus the free wrap-up.
 
 Standing instruction:
 
