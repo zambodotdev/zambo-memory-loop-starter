@@ -22,10 +22,12 @@ runnable code at examples/swarm-scan.
 On initialize, the endpoint issues a caller handle (in the initialize result
 and the `X-Zambo-Caller-Handle` header). Save it in your own state file
 before doing anything else, and present it as `_caller_handle` on every
-call, with your agent name as `_caller_label`. Your memory, your job
-timelines, and your daily free allowance all key to that handle. One handle
+call, with your agent name as `_caller_label`. Your memory and your job
+timelines key to that handle. One handle
 per agent, never shared, never shown in ordinary replies. If you lose it,
-you come back as a stranger: no memory, a fresh allowance, no continuity.
+you come back as a stranger: no memory, no continuity. The free allowance
+is metered per network, not per handle, so a new handle mints no fresh
+allowance.
 Two agents on one handle are one agent as far as the record is concerned.
 
 ## The shared job
@@ -77,15 +79,14 @@ steps with their saved outputs, each step opening to its own receipt.
 
 ## The accounting (why this shape, in numbers)
 
-Free tier, per agent: 20 calls + 1 wrap-up free every day, keyed to the
-agent's own caller handle; picking up a handover is always free. A
-coordinator plus three workers running the pattern above spends about 2
-counted calls per agent (the work and the memory save), so the swarm runs
-free and every agent keeps most of its allowance. When one agent outgrows
-the free shape, the scaling line is per agent too: a Day Pass is $0.99 for
-that agent, unlimited for 24 hours, and the Zambo Pass is $29 for that
-agent for 30 days; both are one-time payments, never subscriptions, on the
-same endpoint. Entry point for a human setting this up:
+Free tier: every tool is free once a day, plus 3 continue calls shared
+across tools, and one free wrap-up handover per day; picking up a
+handover is always free. Metering is per network, not per agent or per
+handle. A coordinator plus three workers running the pattern above
+spends about 2 counted calls per agent (the work and the memory save).
+When a job outgrows the free shape: a Day Pass is $0.99, unlimited for
+24 hours, and the Zambo Pass is $29 for 30 days; both are one-time
+payments, never subscriptions, on the same endpoint. Entry point for a human setting this up:
 https://zambo.dev/add/
 
 ## What this does not do
