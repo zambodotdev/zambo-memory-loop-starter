@@ -169,9 +169,9 @@ never committed): one handle per agent is what keeps each agent's
 memory and free allowance its own. The cost of the whole pattern is
 2 counted calls per agent (the work and the memory save); pickups and
 wrap-ups are free, so this swarm runs inside the free tier. When one
-agent outgrows it, the scaling line is per agent: a Day Pass is $0.99
-for that agent, unlimited for 24 hours, and the Zambo Pass is $29 for
-that agent for 30 days, both one-time payments. $ZAMBO holders pay $19 for 30 days, and the Lifetime Pass is $250, one payment. The same pattern as
+agent outgrows it: a Day Pass is $0.99,
+unlimited for 24 hours, and the Zambo Pass is $29 for
+30 days, both one-time payments. $ZAMBO holders pay $19 for 30 days, and the Lifetime Pass is $250, one payment. The same pattern as
 an installable skill file: [skills/swarm-coordination/SKILL.md](skills/swarm-coordination/SKILL.md).
 The full guide, with a real four-agent run and every receipt:
 https://rambozambodotdev.gitlab.io/aer1-hub/swarm-coordination-on-zambo.html
